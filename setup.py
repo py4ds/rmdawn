@@ -37,7 +37,7 @@ setup(
     entry_points={
         'console_scripts': [
             'sunder=cli.sunder_cli:sunder_cli',
-            'sunder=cli.catrmd_cli:catrmd_cli',
+            'catrmd=cli.catrmd_cli:catrmd_cli',
         ],
     },
     install_requires=requirements,
