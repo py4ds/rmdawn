@@ -62,7 +62,7 @@ docs/index.html: $(DOCS) $(TESTS) $(SRC) ## generate Sphinx HTML documentation, 
 
 git:
 	git add --all
-	[ -z "`git status --porcelain`" ] || git commit
+	[ -z "`git status --porcelain`" ] || git commit -am "Bump version from `python setup.py --version`"
 	git push
 
 
