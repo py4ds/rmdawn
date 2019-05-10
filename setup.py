@@ -36,8 +36,8 @@ setup(
     description="Extract code, markdown, and yaml files from R markdown.",
     entry_points={
         'console_scripts': [
-            'sunder=cli.sunder_cli:sunder_cli',
-            'catrmd=cli.catrmd_cli:catrmd_cli',
+            'rmdusk=cli.rmdusk_cli:rmdusk_cli',
+            'rmdawn=cli.rmdawn_cli:rmdawn_cli',
         ],
     },
     install_requires=requirements,
@@ -45,13 +45,13 @@ setup(
     long_description=readme + '\n\n' + history,
     long_description_content_type='text/x-rst',
     include_package_data=True,
-    keywords='sunder',
-    name='sunder',
-    packages=find_packages(include=['sunder']),
+    keywords='rmdawn',
+    name='rmdawn',
+    packages=find_packages(include=['rmdawn']),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/marskar/sunder',
+    url='https://github.com/marskar/rmdawn',
     version='0.0.2',
     zip_safe=False,
 )
