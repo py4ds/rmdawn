@@ -1,11 +1,19 @@
 # -*- coding: utf-8 -*-
 """Command line interface (CLI) for the rmdawn() function."""
+import sys
+
 import click
+
+from rmdawn.rmdawn import rmdawn
 
 
 @click.command()
 @click.argument("in_files", nargs=-1, required=True,
                 type=click.Path(exists=True))
 @click.option("-o", "--out_file", "out")
-def rmdawn_cli(args=None):
+def rmdawn_cli(in_files: List[str], out: str) -> None:
     """Create an R markdown file from markdown and code files."""
+    if out:
+        Path(out).write_text(rmdawn(in_files))
+    else:
+        sys.stdout.write(rmdawn(in_files))

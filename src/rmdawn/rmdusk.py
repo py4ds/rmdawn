@@ -6,7 +6,7 @@ from pathlib import Path
 from rmdawn.extract import extract_after, extract_between
 
 
-def rmdusk(filename: str) -> str:
+def rmdusk(filename: str) -> None:
     """Extract YAML, code, and markdown files from an R markdown file."""
 
     rmd_path = Path(filename)
