@@ -67,7 +67,7 @@ git:
 
 
 patch: git
-	bumpversion --current-version `python setup.py --version` patch setup.py
+	bumpversion patch
 	git commit --all --message "Bump version to `python setup.py --version`"
 	git push
 

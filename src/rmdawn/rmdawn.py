@@ -17,8 +17,3 @@ def rmdawn(filenames: List[str]) -> str:
         else Path(name).read_text()
         for name in filenames
     ])
-
-    if name.endswith((".yaml", "yml")):
-    if name.endswith((".py", ".R", ".r")):
-        text = Path(name).read_text()
-        if text.startswith("#+"):
