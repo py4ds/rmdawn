@@ -24,9 +24,10 @@ def rmdusk(filename: str) -> None:
     ).split("```")
 
     for n, string in enumerate(code_and_text):
-        if string.startswith("#+ python"):
-            Path(rmd_path.stem + f"_{n}.py").write_text(string.strip())
-        if string.startswith("#+ r"):
-            Path(rmd_path.stem + f"_{n}.R").write_text(string.strip())
-        else:
-            Path(rmd_path.stem + f"_{n}.md").write_text(string.strip())
+        if string:
+            if string.startswith("#+ python"):
+                Path(rmd_path.stem + f"_{n}.py").write_text(string.strip())
+            if string.startswith("#+ r"):
+                Path(rmd_path.stem + f"_{n}.R").write_text(string.strip())
+            else:
+                Path(rmd_path.stem + f"_{n}.md").write_text(string.strip())
