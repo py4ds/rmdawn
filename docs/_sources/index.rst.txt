@@ -1,4 +1,4 @@
-Welcome to Sunder's documentation!
+Welcome to Rmdawn's documentation!
 ======================================================
 
 .. toctree::

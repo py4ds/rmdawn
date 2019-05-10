@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Sunder command-line interface (CLI) &#8212; Sunder 0.0.1 documentation</title>
+    <title>Rmdawn command-line interface (CLI) &#8212; Rmdawn 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -14,8 +14,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="sunder" href="modules.html" />
-    <link rel="prev" title="Sunder" href="readme.html" />
+    <link rel="next" title="rmdawn" href="modules.html" />
+    <link rel="prev" title="Rmdawn" href="readme.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
@@ -27,7 +27,7 @@
     
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">Sunder</a></h1>
+<h1 class="logo"><a href="index.html">Rmdawn</a></h1>
 
 
 
@@ -37,7 +37,7 @@
 
 
 <p>
-<iframe src="https://ghbtns.com/github-btn.html?user=marskar&repo=sunder&type=star&count=true&size=large&v=2"
+<iframe src="https://ghbtns.com/github-btn.html?user=marskar&repo=rmdawn&type=star&count=true&size=large&v=2"
   allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
 </p>
 
@@ -50,8 +50,8 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="readme.html">Project overview</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Command-line interface</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#sunder">sunder</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#catrmd">catrmd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rmdawn">rmdawn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rmdusk">rmdusk</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Module reference</a></li>
@@ -62,8 +62,8 @@
 <h3>Related Topics</h3>
 <ul>
   <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="readme.html" title="previous chapter">Sunder</a></li>
-      <li>Next: <a href="modules.html" title="next chapter">sunder</a></li>
+      <li>Previous: <a href="readme.html" title="previous chapter">Rmdawn</a></li>
+      <li>Next: <a href="modules.html" title="next chapter">rmdawn</a></li>
   </ul></li>
 </ul>
 </div>
@@ -93,45 +93,45 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="sunder-command-line-interface-cli">
-<h1>Sunder command-line interface (CLI)<a class="headerlink" href="#sunder-command-line-interface-cli" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="sunder">
-<h2>sunder<a class="headerlink" href="#sunder" title="Permalink to this headline">¶</a></h2>
-<p>Extract YAML, markdown, and code files from a R markdown file.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sunder <span class="o">[</span>OPTIONS<span class="o">]</span> IN_FILE
+  <div class="section" id="rmdawn-command-line-interface-cli">
+<h1>Rmdawn command-line interface (CLI)<a class="headerlink" href="#rmdawn-command-line-interface-cli" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rmdawn">
+<h2>rmdawn<a class="headerlink" href="#rmdawn" title="Permalink to this headline">¶</a></h2>
+<p>Create an R markdown file from markdown and code files.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rmdawn <span class="o">[</span>OPTIONS<span class="o">]</span> IN_FILES...
 </pre></div>
 </div>
 <p class="rubric">Options</p>
 <dl class="option">
-<dt id="cmdoption-sunder-o">
-<code class="descname">-o</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--out_file</code><code class="descclassname"> &lt;out_file&gt;</code><a class="headerlink" href="#cmdoption-sunder-o" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rmdawn-o">
+<code class="descname">-o</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--out_file</code><code class="descclassname"> &lt;out&gt;</code><a class="headerlink" href="#cmdoption-rmdawn-o" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p class="rubric">Arguments</p>
 <dl class="option">
-<dt id="cmdoption-sunder-arg-in-file">
-<code class="descname">IN_FILE</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-sunder-arg-in-file" title="Permalink to this definition">¶</a></dt>
-<dd><p>Required argument</p>
+<dt id="cmdoption-rmdawn-arg-in-files">
+<code class="descname">IN_FILES</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rmdawn-arg-in-files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument(s)</p>
 </dd></dl>
 
 </div>
-<div class="section" id="catrmd">
-<h2>catrmd<a class="headerlink" href="#catrmd" title="Permalink to this headline">¶</a></h2>
-<p>Create an R markdown file from markdown and code files.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>catrmd <span class="o">[</span>OPTIONS<span class="o">]</span> IN_FILES...
+<div class="section" id="rmdusk">
+<h2>rmdusk<a class="headerlink" href="#rmdusk" title="Permalink to this headline">¶</a></h2>
+<p>Extract YAML, markdown, and code files from a R markdown file.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rmdusk <span class="o">[</span>OPTIONS<span class="o">]</span> IN_FILE
 </pre></div>
 </div>
 <p class="rubric">Options</p>
 <dl class="option">
-<dt id="cmdoption-catrmd-o">
-<code class="descname">-o</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--out_file</code><code class="descclassname"> &lt;out&gt;</code><a class="headerlink" href="#cmdoption-catrmd-o" title="Permalink to this definition">¶</a></dt>
+<dt id="cmdoption-rmdusk-o">
+<code class="descname">-o</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--out_file</code><code class="descclassname"> &lt;out_file&gt;</code><a class="headerlink" href="#cmdoption-rmdusk-o" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <p class="rubric">Arguments</p>
 <dl class="option">
-<dt id="cmdoption-catrmd-arg-in-files">
-<code class="descname">IN_FILES</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-catrmd-arg-in-files" title="Permalink to this definition">¶</a></dt>
-<dd><p>Required argument(s)</p>
+<dt id="cmdoption-rmdusk-arg-in-file">
+<code class="descname">IN_FILE</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-rmdusk-arg-in-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
 </dd></dl>
 
 </div>
@@ -157,7 +157,7 @@
     </div>
 
     
-    <a href="https://github.com/marskar/sunder" class="github">
+    <a href="https://github.com/marskar/rmdawn" class="github">
         <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
     </a>
     

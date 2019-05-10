@@ -20,7 +20,7 @@ sys.path.insert(1, os.path.abspath('../../tests'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'Sunder'
+project = 'Rmdawn'
 copyright = '2019, Martin Skarzynski'
 author = 'Martin Skarzynski'
 
@@ -98,7 +98,7 @@ html_theme_options = {
     'github_banner': 'true',
     'github_type': 'star',
     'github_user': 'marskar',
-    'github_repo': 'sunder'
+    'github_repo': 'rmdawn'
 }
 
 # Theme options are theme-specific and customize the look and feel of a theme
@@ -126,7 +126,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'sunderdoc'
+htmlhelp_basename = 'rmdawndoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -153,7 +153,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'sunder.tex', 'Sunder Documentation',
+    (master_doc, 'rmdawn.tex', 'Rmdawn Documentation',
      'Martin Skarzynski', 'manual'),
 ]
 
@@ -163,7 +163,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'sunder', 'Sunder Documentation',
+    (master_doc, 'rmdawn', 'Rmdawn Documentation',
      ['Martin Skarzynski'], 1)
 ]
 
@@ -174,8 +174,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'sunder', 'Sunder Documentation', 'Martin Skarzynski',
-     'Sunder', 'Create, run, and convert Jupyter notebooks programmatically.',
+    (master_doc, 'rmdawn', 'Rmdawn Documentation', 'Martin Skarzynski',
+     'Rmdawn', 'Create, run, and convert Jupyter notebooks programmatically.',
      'Miscellaneous'),
 ]
 

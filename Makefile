@@ -5,7 +5,7 @@ PYTHON = .venv/bin/python3
 LINTER = black
 DOCS = $(wildcard docs/source/*.rst docs/source/*.md docs/source/*.ipynb)
 TESTS = $(wildcard tests/*.py)
-SRC = $(wildcard src/sunder/*.py)
+SRC = $(wildcard src/rmdawn/*.py)
 
 
 init: .git/
@@ -54,7 +54,7 @@ travis: .travis.yml
 
 docs/index.html: $(DOCS) $(TESTS) $(SRC) ## generate Sphinx HTML documentation, including API docs
 	mv docs html
-	sphinx-apidoc -fo html/source src/sunder
+	sphinx-apidoc -fo html/source src/rmdawn
 	sphinx-apidoc -fo html/source --tocfile tests tests
 	sphinx-build -M html html/source .
 	mv html docs
@@ -108,7 +108,7 @@ test-all: ## run tests on every Python version with tox
 	tox
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run --source sunder -m pytest
+	coverage run --source rmdawn -m pytest
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html

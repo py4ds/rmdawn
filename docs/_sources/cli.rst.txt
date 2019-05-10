@@ -1,8 +1,8 @@
-Sunder command-line interface (CLI)
+Rmdawn command-line interface (CLI)
 ===================================
 
-.. click:: cli.sunder_cli:sunder_cli
-  :prog: sunder
+.. click:: cli.rmdawn_cli:rmdawn_cli
+  :prog: rmdawn
 
-.. click:: cli.catrmd_cli:catrmd_cli
-  :prog: catrmd
+.. click:: cli.rmdusk_cli:rmdusk_cli
+  :prog: rmdusk
