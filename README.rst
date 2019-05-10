@@ -3,7 +3,7 @@ Sunder
 
 Extract YAML, code, and markdown files from an R markdown (Rmd) file.
 
-|PyPI| |Travis| |Documentation Status| |Updates|
+|PyPI| |Travis| |Updates|
 
 The ``sunder`` Python package consists of 2 shell commands and
 functions: - ``sunder``, which extracts 1) a YAML file, 2) Python or R
@@ -23,7 +23,5 @@ markdown code chunks.
    :target: https://pypi.python.org/pypi/sunder
 .. |Travis| image:: https://img.shields.io/travis/marskar/sunder.svg
    :target: https://travis-ci.org/marskar/sunder
-.. |Documentation Status| image:: https://readthedocs.org/projects/sunder/badge/?version=latest
-   :target: https://sunder.readthedocs.io/en/latest/?badge=latest
 .. |Updates| image:: https://pyup.io/repos/github/marskar/sunder/shield.svg
    :target: https://pyup.io/repos/github/marskar/sunder/
