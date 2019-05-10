@@ -3,7 +3,7 @@ Rmdawn
 
 Extract YAML, code, and markdown files from an R markdown (Rmd) file.
 
-|PyPI| |Travis| |Updates|
+|PyPI| |Updates|
 
 The ``rmdawn`` Python package consists of 2 shell commands and
 functions:
@@ -16,7 +16,5 @@ markdown code chunks.
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/rmdawn.svg
    :target: https://pypi.python.org/pypi/rmdawn
-.. |Travis| image:: https://img.shields.io/travis/marskar/rmdawn.svg
-   :target: https://travis-ci.org/marskar/rmdawn
 .. |Updates| image:: https://pyup.io/repos/github/marskar/rmdawn/shield.svg
    :target: https://pyup.io/repos/github/marskar/rmdawn/

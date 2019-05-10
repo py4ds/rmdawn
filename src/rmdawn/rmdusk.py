@@ -3,13 +3,7 @@
 import re
 from pathlib import Path
 
-
-def extract_between(string, start, end):
-    return string[string.find(start) + len(start): string.find(end)]
-
-
-def extract_after(string, start):
-    return string[string.find(start) + len(start):]
+from extract import extract_after, extract_between
 
 
 def rmdusk(filename: str) -> str:
