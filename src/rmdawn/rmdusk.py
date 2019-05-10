@@ -36,6 +36,3 @@ def rmdusk(filename: str) -> str:
             Path(rmd_path.stem + f"_{n}.R").write_text(string.strip())
         else:
             Path(rmd_path.stem + f"_{n}.md").write_text(string.strip())
-
-
-rmdusk("example.Rmd")

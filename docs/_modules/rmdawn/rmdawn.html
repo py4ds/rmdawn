@@ -29,7 +29,7 @@
 
 
 
-<p class="blurb">A Python package for programmatic Jupyter notebook workflows</p>
+<p class="blurb">A Python package for programmatic R markdown workflows</p>
 
 
 
@@ -97,12 +97,16 @@
 
 <div class="viewcode-block" id="rmdawn"><a class="viewcode-back" href="../../rmdawn.html#rmdawn.rmdawn.rmdawn">[docs]</a><span class="k">def</span> <span class="nf">rmdawn</span><span class="p">(</span><span class="n">filenames</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Create an R markdown file from markdown and code files.&quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;```</span><span class="si">{r}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">+</span><span class="n">Path</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">```&#39;</span>
-            <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.R&#39;</span><span class="p">)</span>
-            <span class="k">else</span> <span class="s1">&#39;```</span><span class="si">{python}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">+</span><span class="n">Path</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">```&#39;</span>
-            <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.py&#39;</span><span class="p">)</span>
-            <span class="k">else</span> <span class="n">Path</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
-            <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">]</span></div>
+    <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
+        <span class="s2">&quot;---</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">Path</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">---&quot;</span>
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">((</span><span class="s2">&quot;.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;yml&quot;</span><span class="p">))</span>
+        <span class="k">else</span> <span class="s2">&quot;```</span><span class="si">{python}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">Path</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span>
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.py&quot;</span><span class="p">)</span>
+        <span class="k">else</span> <span class="s2">&quot;```</span><span class="si">{r}</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span> <span class="n">Path</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">```&quot;</span>
+        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.R&quot;</span><span class="p">)</span>
+        <span class="k">else</span> <span class="n">Path</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">filenames</span>
+    <span class="p">])</span></div>
 </pre></div>
 
           </div>
