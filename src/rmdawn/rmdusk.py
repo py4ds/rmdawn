@@ -3,7 +3,7 @@
 import re
 from pathlib import Path
 
-from extract import extract_after, extract_between
+from rmdawn.extract import extract_after, extract_between
 
 
 def rmdusk(filename: str) -> str:

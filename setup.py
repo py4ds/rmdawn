@@ -3,7 +3,7 @@
 
 """The setup script."""
 
-from setuptools import setup, find_packages
+import setuptools
 
 with open('README.rst') as readme_file:
     readme = readme_file.read()
@@ -17,7 +17,7 @@ setup_requirements = ['pytest-runner', ]
 
 test_requirements = ['pytest', ]
 
-setup(
+setuptools.setup(
     author="Martin Skarzynski",
     author_email='marskar@gmail.com',
     classifiers=[
@@ -47,7 +47,8 @@ setup(
     include_package_data=True,
     keywords='rmdawn',
     name='rmdawn',
-    packages=find_packages(include=['rmdawn']),
+    package_dir={"": "src"},
+    packages=setuptools.find_packages('src'),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
