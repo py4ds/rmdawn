@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """Command line interface (CLI) for the rmdawn() function."""
 import sys
+from typing import List
+from pathlib import Path
 
 import click
 
