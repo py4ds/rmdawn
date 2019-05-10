@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sunder command-line interface (CLI) &#8212; Sunder 0.0.1 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="src" href="modules.html" />
+    <link rel="prev" title="Sunder" href="readme.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  <div class="document">
+    
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Sunder</a></h1>
+
+
+
+<p class="blurb">A Python package for programmatic Jupyter notebook workflows</p>
+
+
+
+
+<p>
+<iframe src="https://ghbtns.com/github-btn.html?user=marskar&repo=sunder&type=star&count=true&size=large&v=2"
+  allowtransparency="true" frameborder="0" scrolling="0" width="200px" height="35px"></iframe>
+</p>
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="readme.html">Project overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Command-line interface</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sunder">sunder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#catrmd">catrmd</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">Module reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tests.html">Test reference</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="readme.html" title="previous chapter">Sunder</a></li>
+      <li>Next: <a href="modules.html" title="next chapter">src</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="sunder-command-line-interface-cli">
+<h1>Sunder command-line interface (CLI)<a class="headerlink" href="#sunder-command-line-interface-cli" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="sunder">
+<h2>sunder<a class="headerlink" href="#sunder" title="Permalink to this headline">¶</a></h2>
+<p>Extract YAML, markdown, and code files from a R markdown file.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sunder <span class="o">[</span>OPTIONS<span class="o">]</span> IN_FILE
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="option">
+<dt id="cmdoption-sunder-o">
+<code class="descname">-o</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--out_file</code><code class="descclassname"> &lt;out_file&gt;</code><a class="headerlink" href="#cmdoption-sunder-o" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="option">
+<dt id="cmdoption-sunder-arg-in-file">
+<code class="descname">IN_FILE</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-sunder-arg-in-file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument</p>
+</dd></dl>
+
+</div>
+<div class="section" id="catrmd">
+<h2>catrmd<a class="headerlink" href="#catrmd" title="Permalink to this headline">¶</a></h2>
+<p>Create an R markdown file from markdown and code files.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>catrmd <span class="o">[</span>OPTIONS<span class="o">]</span> IN_FILES...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="option">
+<dt id="cmdoption-catrmd-o">
+<code class="descname">-o</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--out_file</code><code class="descclassname"> &lt;out&gt;</code><a class="headerlink" href="#cmdoption-catrmd-o" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="option">
+<dt id="cmdoption-catrmd-arg-in-files">
+<code class="descname">IN_FILES</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-catrmd-arg-in-files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument(s)</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+    <div class="clearer"></div>
+  </div>
+    <div class="footer">
+      &copy;2019, Martin Skarzynski.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/cli.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+    <a href="https://github.com/marskar/sunder" class="github">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"  class="github"/>
+    </a>
+    
+
+    
+  </body>
+</html>
