@@ -2,7 +2,7 @@
 """Rmdawn: a Python package for (de)constructing R markdown files."""
 
 __author__ = "Martin Skarzynski"
-__version__ = '0.0.9'
+__version__ = '0.0.10'
 
 
 from rmdawn.rmdawn import rmdawn
