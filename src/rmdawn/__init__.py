@@ -3,9 +3,3 @@
 
 __author__ = "Martin Skarzynski"
 __version__ = '0.0.10'
-
-
-from rmdawn.rmdawn import rmdawn
-from rmdawn.rmdusk import rmdusk
-
-__all__ = ["rmdawn", "rmdusk"]

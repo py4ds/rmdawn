@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Rmdawn &#8212; Rmdawn 0.0.1 documentation</title>
+    <title>Rmdawn: a Python package for programmatic R markdown workflows &#8212; Rmdawn 0.0.1 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -48,7 +48,16 @@
 <h3>Navigation</h3>
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Project overview</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Project overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-usage-terminal">Basic usage: terminal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-an-r-markdown-file-with-the-rmdawn-shell-command">Creating an R markdown file with the <code class="docutils literal notranslate"><span class="pre">rmdawn</span></code> shell command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extract-yaml-markdown-and-code-files-from-r-markdown-files-with-the-rmdusk-shell-command">Extract YAML, markdown, and code files from R markdown files with the <code class="docutils literal notranslate"><span class="pre">rmdusk</span></code> shell command</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-usage-python-environment">Basic usage: Python environment</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">Command-line interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Module reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tests.html">Test reference</a></li>
@@ -89,9 +98,12 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="rmdawn">
-<h1>Rmdawn<a class="headerlink" href="#rmdawn" title="Permalink to this headline">¶</a></h1>
-<p>Extract YAML, code, and markdown files from an R markdown (Rmd) file.</p>
+  <div class="section" id="rmdawn-a-python-package-for-programmatic-r-markdown-workflows">
+<h1>Rmdawn: a Python package for programmatic R markdown workflows<a class="headerlink" href="#rmdawn-a-python-package-for-programmatic-r-markdown-workflows" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li><p>Create R markdown (Rmd) files from YAML, code, and markdown files.</p></li>
+<li><p>Extract YAML, code, and markdown files from R markdown files.</p></li>
+</ol>
 <p><a class="reference external" href="https://pypi.python.org/pypi/rmdawn"><img alt="PyPI" src="https://img.shields.io/pypi/v/rmdawn.svg" /></a> <a class="reference external" href="https://pyup.io/repos/github/marskar/rmdawn/"><img alt="Updates" src="https://pyup.io/repos/github/marskar/rmdawn/shield.svg" /></a></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">rmdawn</span></code> Python package consists of 2 shell commands and
 functions:</p>
@@ -99,8 +111,34 @@ functions:</p>
 <li><p><code class="docutils literal notranslate"><span class="pre">rmdawn()</span></code>, which concatenates input files to output an <a class="reference external" href="https://rmarkdown.rstudio.com/authoring_quick_tour.html">R Markdown</a> (Rmd) file.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">rmdusk()</span></code>, which extracts 1) a YAML file, 2) Python or R scripts and 3) <a class="reference external" href="https://www.markdownguide.org/">Markdown</a> (md) files from Rmd files.</p></li>
 </ul>
-<p>Write reports in R markdown format and use rmdawn to extract code from R
-markdown code chunks.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install rmdawn
+</pre></div>
+</div>
+<p>or clone the <a class="reference external" href="https://github.com/marskar/rmdawn">repo</a>, e.g.
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/marskar/rmdawn</span></code> and install locally
+using setup.py (<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code>) or <code class="docutils literal notranslate"><span class="pre">pip</span></code>
+(<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code>).</p>
+</div>
+<div class="section" id="basic-usage-terminal">
+<h2>Basic usage: terminal<a class="headerlink" href="#basic-usage-terminal" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creating-an-r-markdown-file-with-the-rmdawn-shell-command">
+<h3>Creating an R markdown file with the <code class="docutils literal notranslate"><span class="pre">rmdawn</span></code> shell command<a class="headerlink" href="#creating-an-r-markdown-file-with-the-rmdawn-shell-command" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rmdawn header.yml README.md scrape.py plot.R notes.txt &gt; example.Rmd
+</pre></div>
+</div>
+</div>
+<div class="section" id="extract-yaml-markdown-and-code-files-from-r-markdown-files-with-the-rmdusk-shell-command">
+<h3>Extract YAML, markdown, and code files from R markdown files with the <code class="docutils literal notranslate"><span class="pre">rmdusk</span></code> shell command<a class="headerlink" href="#extract-yaml-markdown-and-code-files-from-r-markdown-files-with-the-rmdusk-shell-command" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rmdusk example.Rmd
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="basic-usage-python-environment">
+<h2>Basic usage: Python environment<a class="headerlink" href="#basic-usage-python-environment" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 
 
