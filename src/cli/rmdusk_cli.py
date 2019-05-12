@@ -8,5 +8,8 @@ from rmdawn import rmdusk
 @click.command()
 @click.argument("in_file")
 def rmdusk_cli(in_file: str):
-    """Extract YAML, markdown, and code files from a R markdown file."""
+    """Extract YAML, markdown, and code files from a R markdown file.
+
+    :param in_file: The name of the input R markdown file.
+    """
     rmdusk(in_file)

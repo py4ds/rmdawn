@@ -7,7 +7,10 @@ from pathlib import Path
 
 
 def rmdawn(filenames: List[str]) -> str:
-    """Create an R markdown file from markdown and code files."""
+    """Create an R markdown file from YAML, markdown, and code files.
+
+    :param filenames: A list of YAML, markdown, and code file names.
+    """
     return "\n\n".join([
         # YAML files
         "---\n" + Path(name).read_text() + "\n---"

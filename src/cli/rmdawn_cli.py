@@ -14,7 +14,11 @@ from rmdawn.rmdawn import rmdawn
                 type=click.Path(exists=True))
 @click.option("-o", "--out_file", "out")
 def rmdawn_cli(in_files: List[str], out: str) -> None:
-    """Create an R markdown file from markdown and code files."""
+    """Create an R markdown file from markdown and code files.
+
+    :param in_files: The list of the input files.
+    :param out_file: The name of the output R markdown file.
+    """
     if out:
         Path(out).write_text(rmdawn(in_files))
     else:

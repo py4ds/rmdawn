@@ -53,6 +53,7 @@
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module reference</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">rmdawn package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-rmdawn.extract">rmdawn.extract module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-rmdawn.rmdawn">rmdawn.rmdawn module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-rmdawn.rmdusk">rmdawn.rmdusk module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-rmdawn">Module contents</a></li>
@@ -105,37 +106,117 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
+<div class="section" id="module-rmdawn.extract">
+<span id="rmdawn-extract-module"></span><h2>rmdawn.extract module<a class="headerlink" href="#module-rmdawn.extract" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="rmdawn.extract.extract_after">
+<code class="descclassname">rmdawn.extract.</code><code class="descname">extract_after</code><span class="sig-paren">(</span><em>source: str</em>, <em>start: str</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/rmdawn/extract.html#extract_after"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmdawn.extract.extract_after" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract all of the characters after <code class="docutils literal notranslate"><span class="pre">start</span></code>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – The input string from which to extract a substring.</p></li>
+<li><p><strong>start</strong> – The substring that marks the extraction starting place.</p></li>
+<li><p><strong>return</strong> – A substring that is extracted from <code class="docutils literal notranslate"><span class="pre">source</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">start</span></code> string is not include in the result.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rmdawn.extract.extract_before">
+<code class="descclassname">rmdawn.extract.</code><code class="descname">extract_before</code><span class="sig-paren">(</span><em>source: str</em>, <em>end: str</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/rmdawn/extract.html#extract_before"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmdawn.extract.extract_before" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract all of the characters before start.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – The input string from which to extract a substring.</p></li>
+<li><p><strong>end</strong> – The substring that marks the place where extraction will end.</p></li>
+<li><p><strong>return</strong> – A substring that is extracted from <code class="docutils literal notranslate"><span class="pre">source</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">end</span></code> string is not include in the result.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rmdawn.extract.extract_between">
+<code class="descclassname">rmdawn.extract.</code><code class="descname">extract_between</code><span class="sig-paren">(</span><em>source: str</em>, <em>start: str</em>, <em>end: str</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/rmdawn/extract.html#extract_between"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmdawn.extract.extract_between" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract all of the characters between start and end.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source</strong> – The input string from which to extract a substring.</p></li>
+<li><p><strong>start</strong> – The substring that marks the extraction starting place.</p></li>
+<li><p><strong>end</strong> – The substring that marks the place where extraction will end.</p></li>
+<li><p><strong>return</strong> – A substring that is extracted from <code class="docutils literal notranslate"><span class="pre">source</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>The <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> strings are not include in the result.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 <div class="section" id="module-rmdawn.rmdawn">
 <span id="rmdawn-rmdawn-module"></span><h2>rmdawn.rmdawn module<a class="headerlink" href="#module-rmdawn.rmdawn" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="rmdawn.rmdawn.rmdawn">
 <code class="descclassname">rmdawn.rmdawn.</code><code class="descname">rmdawn</code><span class="sig-paren">(</span><em>filenames: List[str]</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/rmdawn/rmdawn.html#rmdawn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmdawn.rmdawn.rmdawn" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an R markdown file from markdown and code files.</p>
+<dd><p>Create an R markdown file from YAML, markdown, and code files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filenames</strong> – A list of YAML, markdown, and code file names.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
 <div class="section" id="module-rmdawn.rmdusk">
 <span id="rmdawn-rmdusk-module"></span><h2>rmdawn.rmdusk module<a class="headerlink" href="#module-rmdawn.rmdusk" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
-<dt id="rmdawn.rmdusk.extract_after">
-<code class="descclassname">rmdawn.rmdusk.</code><code class="descname">extract_after</code><span class="sig-paren">(</span><em>string</em>, <em>start</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmdawn/rmdusk.html#extract_after"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmdawn.rmdusk.extract_after" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
-<dt id="rmdawn.rmdusk.extract_between">
-<code class="descclassname">rmdawn.rmdusk.</code><code class="descname">extract_between</code><span class="sig-paren">(</span><em>string</em>, <em>start</em>, <em>end</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/rmdawn/rmdusk.html#extract_between"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmdawn.rmdusk.extract_between" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="function">
 <dt id="rmdawn.rmdusk.rmdusk">
-<code class="descclassname">rmdawn.rmdusk.</code><code class="descname">rmdusk</code><span class="sig-paren">(</span><em>filename: str</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/rmdawn/rmdusk.html#rmdusk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmdawn.rmdusk.rmdusk" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">rmdawn.rmdusk.</code><code class="descname">rmdusk</code><span class="sig-paren">(</span><em>filename: str</em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/rmdawn/rmdusk.html#rmdusk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmdawn.rmdusk.rmdusk" title="Permalink to this definition">¶</a></dt>
 <dd><p>Extract YAML, code, and markdown files from an R markdown file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> – The name of the input R markdown file.</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div>
 <div class="section" id="module-rmdawn">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-rmdawn" title="Permalink to this headline">¶</a></h2>
 <p>Rmdawn: a Python package for (de)constructing R markdown files.</p>
+<dl class="function">
+<dt id="rmdawn.rmdawn">
+<code class="descclassname">rmdawn.</code><code class="descname">rmdawn</code><span class="sig-paren">(</span><em>filenames: List[str]</em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/rmdawn/rmdawn.html#rmdawn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmdawn.rmdawn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an R markdown file from YAML, markdown, and code files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filenames</strong> – A list of YAML, markdown, and code file names.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="rmdawn.rmdusk">
+<code class="descclassname">rmdawn.</code><code class="descname">rmdusk</code><span class="sig-paren">(</span><em>filename: str</em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/rmdawn/rmdusk.html#rmdusk"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmdawn.rmdusk" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract YAML, code, and markdown files from an R markdown file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> – The name of the input R markdown file.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 </div>
 

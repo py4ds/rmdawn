@@ -4,6 +4,14 @@ rmdawn package
 Submodules
 ----------
 
+rmdawn.extract module
+---------------------
+
+.. automodule:: rmdawn.extract
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 rmdawn.rmdawn module
 --------------------
 

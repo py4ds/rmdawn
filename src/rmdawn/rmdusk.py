@@ -7,7 +7,10 @@ from rmdawn.extract import extract_after, extract_between
 
 
 def rmdusk(filename: str) -> None:
-    """Extract YAML, code, and markdown files from an R markdown file."""
+    """Extract YAML, code, and markdown files from an R markdown file.
+
+    :param filename: The name of the input R markdown file.
+    """
 
     rmd_path = Path(filename)
     rmd_text = rmd_path.read_text()

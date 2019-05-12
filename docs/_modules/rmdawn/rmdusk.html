@@ -93,17 +93,14 @@
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="k">import</span> <span class="n">Path</span>
 
-
-<div class="viewcode-block" id="extract_between"><a class="viewcode-back" href="../../rmdawn.html#rmdawn.rmdusk.extract_between">[docs]</a><span class="k">def</span> <span class="nf">extract_between</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">string</span><span class="p">[</span><span class="n">string</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">):</span> <span class="n">string</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">end</span><span class="p">)]</span></div>
+<span class="kn">from</span> <span class="nn">rmdawn.extract</span> <span class="k">import</span> <span class="n">extract_after</span><span class="p">,</span> <span class="n">extract_between</span>
 
 
-<div class="viewcode-block" id="extract_after"><a class="viewcode-back" href="../../rmdawn.html#rmdawn.rmdusk.extract_after">[docs]</a><span class="k">def</span> <span class="nf">extract_after</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">start</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">string</span><span class="p">[</span><span class="n">string</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">start</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">start</span><span class="p">):]</span></div>
+<div class="viewcode-block" id="rmdusk"><a class="viewcode-back" href="../../rmdawn.html#rmdawn.rmdusk.rmdusk">[docs]</a><span class="k">def</span> <span class="nf">rmdusk</span><span class="p">(</span><span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Extract YAML, code, and markdown files from an R markdown file.</span>
 
-
-<div class="viewcode-block" id="rmdusk"><a class="viewcode-back" href="../../rmdawn.html#rmdawn.rmdusk.rmdusk">[docs]</a><span class="k">def</span> <span class="nf">rmdusk</span><span class="p">(</span><span class="n">filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Extract YAML, code, and markdown files from an R markdown file.&quot;&quot;&quot;</span>
+<span class="sd">    :param filename: The name of the input R markdown file.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">rmd_path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
     <span class="n">rmd_text</span> <span class="o">=</span> <span class="n">rmd_path</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
@@ -120,12 +117,13 @@
     <span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;```&quot;</span><span class="p">)</span>
 
     <span class="k">for</span> <span class="n">n</span><span class="p">,</span> <span class="n">string</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">code_and_text</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">string</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#+ python&quot;</span><span class="p">):</span>
-            <span class="n">Path</span><span class="p">(</span><span class="n">rmd_path</span><span class="o">.</span><span class="n">stem</span> <span class="o">+</span> <span class="n">f</span><span class="s2">&quot;_</span><span class="si">{n}</span><span class="s2">.py&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-        <span class="k">if</span> <span class="n">string</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#+ r&quot;</span><span class="p">):</span>
-            <span class="n">Path</span><span class="p">(</span><span class="n">rmd_path</span><span class="o">.</span><span class="n">stem</span> <span class="o">+</span> <span class="n">f</span><span class="s2">&quot;_</span><span class="si">{n}</span><span class="s2">.R&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">Path</span><span class="p">(</span><span class="n">rmd_path</span><span class="o">.</span><span class="n">stem</span> <span class="o">+</span> <span class="n">f</span><span class="s2">&quot;_</span><span class="si">{n}</span><span class="s2">.md&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span></div>
+        <span class="k">if</span> <span class="n">string</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">string</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#+ python&quot;</span><span class="p">):</span>
+                <span class="n">Path</span><span class="p">(</span><span class="n">rmd_path</span><span class="o">.</span><span class="n">stem</span> <span class="o">+</span> <span class="n">f</span><span class="s2">&quot;_</span><span class="si">{n}</span><span class="s2">.py&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">string</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;#+ r&quot;</span><span class="p">):</span>
+                <span class="n">Path</span><span class="p">(</span><span class="n">rmd_path</span><span class="o">.</span><span class="n">stem</span> <span class="o">+</span> <span class="n">f</span><span class="s2">&quot;_</span><span class="si">{n}</span><span class="s2">.R&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">Path</span><span class="p">(</span><span class="n">rmd_path</span><span class="o">.</span><span class="n">stem</span> <span class="o">+</span> <span class="n">f</span><span class="s2">&quot;_</span><span class="si">{n}</span><span class="s2">.md&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">string</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span></div>
 </pre></div>
 
           </div>
