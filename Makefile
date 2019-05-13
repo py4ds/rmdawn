@@ -79,8 +79,15 @@ major: git
 	git push
 
 
+## remove all build, test, coverage and Python artifacts
+clean: clean-docs clean-build clean-pyc clean-test
 
-clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
+clean-docs:
+	rm -rf docs/_modules
+	rm -rf docs/searchindex.js
+	rm -rf docs/_sources
+	rm -rf docs/doctrees
+	rm -rf doctrees
 
 clean-build: ## remove build artifacts
 	rm -fr build/
