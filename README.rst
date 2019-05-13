@@ -20,7 +20,10 @@ Installation
 
     pip install rmdawn
 
-or clone the `repo <https://github.com/marskar/rmdawn>`__, e.g. ``git clone https://github.com/marskar/rmdawn`` and install locally using setup.py (``python setup.py install``) or ``pip`` (``pip install .``).
+or clone the `repo <https://github.com/marskar/rmdawn>`__, e.g.
+``git clone https://github.com/marskar/rmdawn`` and install locally
+using setup.py (``python setup.py install``) or ``pip``
+(``pip install .``).
 
 Basic usage: terminal
 ---------------------
@@ -30,7 +33,7 @@ Creating an R markdown file with the ``rmdawn`` shell command
 
 .. code:: sh
 
-    rmdawn header.yml README.md scrape.py plot.R notes.txt > example.Rmd
+    rmdawn header.yml intro.md scrape.py plot.R notes.txt > example.Rmd
 
 
 Extract YAML, markdown, and code files from R markdown files with the ``rmdusk`` shell command
@@ -41,6 +44,22 @@ Extract YAML, markdown, and code files from R markdown files with the ``rmdusk``
     rmdusk example.Rmd
 
 
+Basic usage: Python environment
+-------------------------------
+
+.. code:: python
+
+    from pathlib import Path
+
+    from rmdawn import rmdawn, rmdusk
+
+    # Create an R markdown file from source files
+    Path("example.Rmd").write_text(
+        rmdawn(["header.yml", "intro.md", "scrape.py", "plot.R", "notes.txt"])
+        )
+
+    # Extract source files from an R markdown file
+    rmdusk("example.Rmd")
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/rmdawn.svg
    :target: https://pypi.python.org/pypi/rmdawn
