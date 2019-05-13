@@ -20,10 +20,7 @@ Installation
 
     pip install rmdawn
 
-or clone the `repo <https://github.com/marskar/rmdawn>`__, e.g.
-``git clone https://github.com/marskar/rmdawn`` and install locally
-using setup.py (``python setup.py install``) or ``pip``
-(``pip install .``).
+or clone the `repo <https://github.com/marskar/rmdawn>`__, e.g. ``git clone https://github.com/marskar/rmdawn`` and install locally using setup.py (``python setup.py install``) or ``pip`` (``pip install .``).
 
 Basic usage: terminal
 ---------------------
@@ -43,9 +40,6 @@ Extract YAML, markdown, and code files from R markdown files with the ``rmdusk``
 
     rmdusk example.Rmd
 
-
-Basic usage: Python environment
--------------------------------
 
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/rmdawn.svg
