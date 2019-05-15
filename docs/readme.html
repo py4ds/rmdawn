@@ -49,13 +49,12 @@
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Project overview</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#basic-usage-terminal">Basic usage: terminal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#creating-an-r-markdown-file-with-the-rmdawn-shell-command">Creating an R markdown file with the <code class="docutils literal notranslate"><span class="pre">rmdawn</span></code> shell command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#extract-yaml-markdown-and-code-files-from-r-markdown-files-with-the-rmdusk-shell-command">Extract YAML, markdown, and code files from R markdown files with the <code class="docutils literal notranslate"><span class="pre">rmdusk</span></code> shell command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#basic-usage-python-environment">Basic usage: Python environment</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#basic-usage-python-environment">Basic usage: Python environment</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cli.html">Command-line interface</a></li>
@@ -116,16 +115,10 @@ functions:</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip install rmdawn
 </pre></div>
 </div>
-<p>or clone the <a class="reference external" href="https://github.com/marskar/rmdawn">repo</a>, e.g.
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/marskar/rmdawn</span></code> and install locally
-using setup.py (<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code>) or <code class="docutils literal notranslate"><span class="pre">pip</span></code>
-(<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code>).</p>
-</div>
-<div class="section" id="basic-usage-terminal">
-<h2>Basic usage: terminal<a class="headerlink" href="#basic-usage-terminal" title="Permalink to this headline">¶</a></h2>
+<p>or clone the <a class="reference external" href="https://github.com/marskar/rmdawn">repo</a>, e.g. <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/marskar/rmdawn</span></code> and install locally using setup.py (<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">setup.py</span> <span class="pre">install</span></code>) or <code class="docutils literal notranslate"><span class="pre">pip</span></code> (<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">.</span></code>).</p>
 <div class="section" id="creating-an-r-markdown-file-with-the-rmdawn-shell-command">
 <h3>Creating an R markdown file with the <code class="docutils literal notranslate"><span class="pre">rmdawn</span></code> shell command<a class="headerlink" href="#creating-an-r-markdown-file-with-the-rmdawn-shell-command" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rmdawn header.yml README.md scrape.py plot.R notes.txt &gt; example.Rmd
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rmdawn header.yml intro.md scrape.py plot.R notes.txt &gt; example.Rmd
 </pre></div>
 </div>
 </div>
@@ -135,9 +128,22 @@ using setup.py (<code class="docutils literal notranslate"><span class="pre">pyt
 </pre></div>
 </div>
 </div>
-</div>
 <div class="section" id="basic-usage-python-environment">
-<h2>Basic usage: Python environment<a class="headerlink" href="#basic-usage-python-environment" title="Permalink to this headline">¶</a></h2>
+<h3>Basic usage: Python environment<a class="headerlink" href="#basic-usage-python-environment" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+
+<span class="kn">from</span> <span class="nn">rmdawn</span> <span class="kn">import</span> <span class="n">rmdawn</span><span class="p">,</span> <span class="n">rmdusk</span>
+
+<span class="c1"># Create an R markdown file from source files</span>
+<span class="n">Path</span><span class="p">(</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span>
+    <span class="n">rmdawn</span><span class="p">([</span><span class="s2">&quot;header.yml&quot;</span><span class="p">,</span> <span class="s2">&quot;intro.md&quot;</span><span class="p">,</span> <span class="s2">&quot;scrape.py&quot;</span><span class="p">,</span> <span class="s2">&quot;plot.R&quot;</span><span class="p">,</span> <span class="s2">&quot;notes.txt&quot;</span><span class="p">])</span>
+    <span class="p">)</span>
+
+<span class="c1"># Extract source files from an R markdown file</span>
+<span class="n">rmdusk</span><span class="p">(</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 

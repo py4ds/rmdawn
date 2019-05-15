@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Helper functions to extract substrings from strings."""
 
 
 def extract_after(source: str, start: str) -> str:

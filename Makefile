@@ -54,7 +54,7 @@ travis: .travis.yml
 
 docs/index.html: $(DOCS) $(TESTS) $(SRC) ## generate Sphinx HTML documentation, including API docs
 	mv docs html
-	sphinx-apidoc -fo html/source src/rmdawn
+	sphinx-apidoc -fo html/source src/rmdawn src/rmdawn/rmd* src/rmdawn/extract.py
 	sphinx-apidoc -fo html/source --tocfile tests tests
 	sphinx-build -M html html/source .
 	mv html docs
