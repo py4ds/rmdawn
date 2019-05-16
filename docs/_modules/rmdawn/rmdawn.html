@@ -1,11 +1,9 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
     <title>rmdawn.rmdawn &#8212; Rmdawn 0.0.1 documentation</title>
     <link rel="stylesheet" href="../../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
@@ -69,8 +67,6 @@
     <form class="search" action="../../search.html" method="get">
       <input type="text" name="q" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
@@ -100,10 +96,11 @@
 <span class="kn">from</span> <span class="nn">pathlib</span> <span class="k">import</span> <span class="n">Path</span>
 
 
-<div class="viewcode-block" id="rmdawn"><a class="viewcode-back" href="../../rmdawn.html#rmdawn.rmdawn">[docs]</a><span class="k">def</span> <span class="nf">rmdawn</span><span class="p">(</span><span class="n">filenames</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="rmdawn"><a class="viewcode-back" href="../../rmdawn.html#rmdawn.rmdawn">[docs]</a><span class="k">def</span> <span class="nf">rmdawn</span><span class="p">(</span><span class="n">in_files</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Create an R markdown file from YAML, markdown, and code files.</span>
 
-<span class="sd">    :param filenames: A list of YAML, markdown, and code file names.</span>
+<span class="sd">    :param in_files: A list of YAML, markdown, and code file names.</span>
+<span class="sd">    :param return: A string containing the output R markdown file.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span>
         <span class="c1"># YAML files</span>
@@ -126,7 +123,7 @@
 
         <span class="c1"># All other files (markdown, txt, etc.)</span>
         <span class="k">else</span> <span class="n">Path</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">filenames</span>
+        <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">in_files</span>
     <span class="p">])</span></div>
 </pre></div>
 
@@ -140,7 +137,7 @@
       &copy;2019, Martin Skarzynski.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.5</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.0.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
     </div>

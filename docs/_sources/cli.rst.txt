@@ -12,3 +12,6 @@ Rmdawn command-line interface (CLI)
 
 .. click:: cli.rtormd_cli:rtormd_cli
   :prog: rtormd
+
+.. click:: cli.render_cli:render_cli
+  :prog: render
