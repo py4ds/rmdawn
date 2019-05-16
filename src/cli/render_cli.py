@@ -4,7 +4,7 @@ from typing import Optional
 
 import click
 
-from rmdawn.rtormd import rtormd
+from rmdawn.render import render
 
 
 @click.command()
