@@ -6,10 +6,11 @@ from typing import List
 from pathlib import Path
 
 
-def rmdawn(filenames: List[str]) -> str:
+def rmdawn(in_files: List[str]) -> str:
     """Create an R markdown file from YAML, markdown, and code files.
 
-    :param filenames: A list of YAML, markdown, and code file names.
+    :param in_files: A list of YAML, markdown, and code file names.
+    :param return: A string containing the output R markdown file.
     """
     return "\n\n".join([
         # YAML files
@@ -32,5 +33,5 @@ def rmdawn(filenames: List[str]) -> str:
 
         # All other files (markdown, txt, etc.)
         else Path(name).read_text()
-        for name in filenames
+        for name in in_files
     ])
