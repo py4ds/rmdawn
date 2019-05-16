@@ -40,6 +40,7 @@ setuptools.setup(
             'rmdawn=cli.rmdawn_cli:rmdawn_cli',
             'rmdtor=cli.rmdtor_cli:rmdtor_cli',
             'rtormd=cli.rtormd_cli:rtormd_cli',
+            'render=cli.render_cli:render_cli',
         ],
     },
     install_requires=requirements,
