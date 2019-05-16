@@ -26,10 +26,7 @@ def render(in_file: str,
 
     rmd = importr("rmarkdown")
 
-    if not out_format and not out_file:
-        return "You must provide output_file or output_format."
-
-    elif out_file and not out_format:
+    if out_file and not out_format:
         ext = Path(out_file).suffix
         if ext in (".html", ".pdf", ".rtf", ".odt", ".md"):
             out_format = ext.replace(".", "") + "_document"
@@ -40,12 +37,12 @@ def render(in_file: str,
 
     elif out_format and not out_file:
         stem = Path(in_file).stem
-        if out_format.startswith("html", "pdf", "rtf", "odt", "md"):
+        if out_format.startswith(("html", "pdf", "rtf", "odt", "md")):
             out_file = stem + "." + out_format.replace("_document", "")
         elif out_format == "word_document":
             out_file = stem + ".docx"
         elif out_format == "powerpoint_presentation":
-            out_file = stem + ".ppts"
+            out_file = stem + ".pptx"
 
     print(rmd.render(in_file,
                      output_file=out_file,
