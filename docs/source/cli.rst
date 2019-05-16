@@ -6,3 +6,9 @@ Rmdawn command-line interface (CLI)
 
 .. click:: cli.rmdusk_cli:rmdusk_cli
   :prog: rmdusk
+
+.. click:: cli.rmdtor_cli:rmdtor_cli
+  :prog: rmdtor
+
+.. click:: cli.rtormd_cli:rtormd_cli
+  :prog: rtormd
