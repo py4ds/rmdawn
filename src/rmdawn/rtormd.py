@@ -13,6 +13,6 @@ def rtormd(filename: str, output: Optional[str] = None) -> None:
     k = importr("knitr")
 
     if output:
-        print(k.spin(filename, output=output, knit=False, format="Rmd")
+        print(k.spin(filename, output=output, knit=False, format="Rmd"))
     else:
         print(k.spin(filename, knit=False, format="Rmd"))

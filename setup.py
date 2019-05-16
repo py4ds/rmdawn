@@ -13,9 +13,9 @@ with open('HISTORY.rst') as history_file:
 
 requirements = ['Click>=6.0', ]
 
-setup_requirements = ['pytest-runner', ]
+setup_requirements = ['pytest-runner', "rpy2"]
 
-test_requirements = ['pytest', rpy2]
+test_requirements = ['pytest']
 
 setuptools.setup(
     author="Martin Skarzynski",
@@ -38,6 +38,8 @@ setuptools.setup(
         'console_scripts': [
             'rmdusk=cli.rmdusk_cli:rmdusk_cli',
             'rmdawn=cli.rmdawn_cli:rmdawn_cli',
+            'rmdtor=cli.rmdtor_cli:rmdtor_cli',
+            'rtormd=cli.rtormd_cli:rtormd_cli',
         ],
     },
     install_requires=requirements,

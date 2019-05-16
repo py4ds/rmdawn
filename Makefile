@@ -14,7 +14,7 @@ docs: docs/index.html
 patch-release: patch release
 
 
-.venv/bin/activate: requirements_dev.txt
+.venv/bin/activate: requirements_dev.txt setup.py
 ifneq ($(ENV), $(filter $(ENV),conda venv))
 	pip install $(ENV)
 endif
