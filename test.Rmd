@@ -79,3 +79,7 @@ setuptools.setup(
     zip_safe=False,
 )
 ```
+
+```{r}
+print("hello")
+```
