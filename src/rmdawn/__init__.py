@@ -8,7 +8,7 @@ from rmdawn.render import render
 from rmdawn.extract import extract_after, extract_before, extract_between
 
 __author__ = "Martin Skarzynski"
-__version__ = '0.0.19'
+__version__ = '0.0.20'
 __all__ = [
     "rmdawn",
     "rmdusk",
