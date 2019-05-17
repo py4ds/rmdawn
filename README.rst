@@ -6,11 +6,15 @@ Rmdawn: a Python package for programmatic R markdown workflows
 
 |PyPI| |Updates|
 
-The ``rmdawn`` Python package consists of 2 shell commands and
+The ``rmdawn`` Python package consists of 6 shell commands and
 functions:
 
 - ``rmdawn``, which concatenates input files to output an `R Markdown <https://rmarkdown.rstudio.com/authoring_quick_tour.html>`__ (Rmd) file.
 - ``rmdusk``, which extracts 1) a YAML file, 2) Python or R scripts and 3) `Markdown <https://www.markdownguide.org/>`__ (md) files from Rmd files.
+- ``rmdtor``
+- ``rtormd``
+- ``render``
+- ``catren``
 
 
 Installation
