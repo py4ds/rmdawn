@@ -41,6 +41,7 @@ setuptools.setup(
             'rmdtor=cli.rmdtor_cli:rmdtor_cli',
             'rtormd=cli.rtormd_cli:rtormd_cli',
             'render=cli.render_cli:render_cli',
+            'catren=cli.catren_cli:catren_cli',
         ],
     },
     install_requires=requirements,

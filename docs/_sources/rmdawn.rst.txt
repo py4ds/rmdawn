@@ -1,6 +1,18 @@
 rmdawn package
 ==============
 
+Submodules
+----------
+
+rmdawn.catren module
+--------------------
+
+.. automodule:: rmdawn.catren
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
 Module contents
 ---------------
 

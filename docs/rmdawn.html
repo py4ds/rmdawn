@@ -52,6 +52,8 @@
 <li class="toctree-l1"><a class="reference internal" href="cli.html">Command-line interface</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">Module reference</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">rmdawn package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-rmdawn.catren">rmdawn.catren module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-rmdawn">Module contents</a></li>
 </ul>
 </li>
@@ -99,6 +101,38 @@
             
   <div class="section" id="rmdawn-package">
 <h1>rmdawn package<a class="headerlink" href="#rmdawn-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-rmdawn.catren">
+<span id="rmdawn-catren-module"></span><h2>rmdawn.catren module<a class="headerlink" href="#module-rmdawn.catren" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="rmdawn.catren.catren">
+<code class="descclassname">rmdawn.catren.</code><code class="descname">catren</code><span class="sig-paren">(</span><em>in_files: List[str], rmd_file: Optional[str] = None, out_file: Optional[str] = None, out_format: Optional[str] = None</em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/rmdawn/catren.html#catren"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rmdawn.catren.catren" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an R markdown file from source files and then render it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>in_files</strong> – A list of YAML, markdown, and code file names.</p></li>
+<li><p><strong>rmd_file</strong> – The name of the intermediate rmd file.</p></li>
+<li><p><strong>out_file</strong> – The name of the final output file.</p></li>
+<li><p><strong>out_format</strong> – The format of the final output file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Note</dt>
+<dd class="field-even"><p>If <code class="docutils literal notranslate"><span class="pre">out_format</span></code> is not provided, the output format will be
+inferred from the <code class="docutils literal notranslate"><span class="pre">out_file</span></code> argument. To create an html
+notebook, the <code class="docutils literal notranslate"><span class="pre">out_format</span></code> must be <code class="docutils literal notranslate"><span class="pre">html_notebook</span></code>.
+For slides in html or pdf format, the <code class="docutils literal notranslate"><span class="pre">out_format</span></code> must be
+- <code class="docutils literal notranslate"><span class="pre">slidy_presentation</span></code>,
+- <code class="docutils literal notranslate"><span class="pre">ioslides_presentation</span></code>,
+- <code class="docutils literal notranslate"><span class="pre">beamer_presentation</span></code>, or
+- <code class="docutils literal notranslate"><span class="pre">revealjs::revealjs_presentation</span></code>.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
 <div class="section" id="module-rmdawn">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-rmdawn" title="Permalink to this headline">¶</a></h2>
 <p>Rmdawn: a Python package for (de)constructing R markdown files.</p>

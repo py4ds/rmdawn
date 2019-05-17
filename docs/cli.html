@@ -55,6 +55,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#rmdtor">rmdtor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rtormd">rtormd</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#render">render</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#catren">catren</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">Module reference</a></li>
@@ -234,6 +235,50 @@
 <dt id="cmdoption-render-arg-in-file">
 <code class="descname">IN_FILE</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-render-arg-in-file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Required argument</p>
+</dd></dl>
+
+</div>
+<div class="section" id="catren">
+<h2>catren<a class="headerlink" href="#catren" title="Permalink to this headline">¶</a></h2>
+<p>Convert an R markdown file into an R script.</p>
+<dl class="field-list simple">
+<dt class="field-odd">param in_files</dt>
+<dd class="field-odd"><p>A list of YAML, markdown, and code file names.</p>
+</dd>
+<dt class="field-even">param rmd_file</dt>
+<dd class="field-even"><p>The name of the intermediate rmd file.</p>
+</dd>
+<dt class="field-odd">param out_file</dt>
+<dd class="field-odd"><p>The name of the final output file.</p>
+</dd>
+<dt class="field-even">param out_format</dt>
+<dd class="field-even"><p>The format of the final output file.</p>
+</dd>
+</dl>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>catren <span class="o">[</span>OPTIONS<span class="o">]</span> IN_FILES...
+</pre></div>
+</div>
+<p class="rubric">Options</p>
+<dl class="option">
+<dt id="cmdoption-catren-r">
+<code class="descname">-r</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--rmd_file</code><code class="descclassname"> &lt;rmd_file&gt;</code><a class="headerlink" href="#cmdoption-catren-r" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-catren-o">
+<code class="descname">-o</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--out_file</code><code class="descclassname"> &lt;out_file&gt;</code><a class="headerlink" href="#cmdoption-catren-o" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="option">
+<dt id="cmdoption-catren-f">
+<code class="descname">-f</code><code class="descclassname"></code><code class="descclassname">, </code><code class="descname">--format</code><code class="descclassname"> &lt;out_format&gt;</code><a class="headerlink" href="#cmdoption-catren-f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Arguments</p>
+<dl class="option">
+<dt id="cmdoption-catren-arg-in-files">
+<code class="descname">IN_FILES</code><code class="descclassname"></code><a class="headerlink" href="#cmdoption-catren-arg-in-files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Required argument(s)</p>
 </dd></dl>
 
 </div>
