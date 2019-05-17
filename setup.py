@@ -33,7 +33,7 @@ setuptools.setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-    description="Extract code, markdown, and yaml files from R markdown.",
+    description="Construct, deconstruct, and convert R markdown files.",
     entry_points={
         'console_scripts': [
             'rmdusk=cli.rmdusk_cli:rmdusk_cli',
