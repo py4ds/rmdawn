@@ -57,6 +57,6 @@ setuptools.setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/marskar/rmdawn',
-    version='0.0.18',
+    version='0.0.19',
     zip_safe=False,
 )
