@@ -30,6 +30,10 @@ def catren(in_files: List[str],
     if rmd_file:
         Path(rmd_file).write_text(rmdawn(in_files))
         render(rmd_file, out_file=out_file, out_format=out_format)
+    elif out_file:
+        rmd_file = Path(out_file).stem + ".Rmd"
+        Path(rmd_file).write_text(rmdawn(in_files))
+        render(rmd_file, out_file=out_file, out_format=out_format)
     else:
         with tempfile.NamedTemporaryFile(mode="w") as ntf:
             ntf.write(rmdawn(in_files))

@@ -51,6 +51,17 @@ Creating an R markdown file with the ``rmdawn`` shell command
 
     rmdawn header.yml intro.md scrape.py plot.R notes.txt > example.Rmd
 
+Instead of redirecting to a file (``>``), you can use the ``--out_file`` or ``-o`` flag:
+
+.. code:: sh
+
+    rmdawn header.yml intro.md scrape.py plot.R notes.txt -o example.Rmd
+
+The easiest way to handle large numbers of files is to use the ``*`` wildcard in the shell.
+
+.. code:: sh
+
+    rmdawn source_file* -o example.Rmd
 
 Extract YAML, markdown, and code files from R markdown files with the ``rmdusk`` shell command
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,6 +70,72 @@ Extract YAML, markdown, and code files from R markdown files with the ``rmdusk``
 
     rmdusk example.Rmd
 
+Convert between R markdown and R code files with the ``rmdtor`` and ``rtormd`` shell commands
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: sh
+
+    rmdtor example.Rmd
+
+    rtormd example.R
+
+You can also specify an new filename with ``--out_file`` or ``-o`` flag.
+
+.. code:: sh
+
+    rmdtor example.Rmd -o new.R
+
+    rtormd example.R -o new.Rmd
+
+Render R markdown and R code files with the ``render`` shell command
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The default output format is HTML.
+
+.. code:: sh
+
+    render example.Rmd
+    render example.R
+
+You can specify output format with the ``--format`` or ``-f`` flag.
+
+.. code:: sh
+
+    render example.Rmd -f word_document
+    render example.R -f word_document
+
+If you only specify output filename with the ``--out_file`` or ``-o`` flag,
+``render`` will try to infer the output format from the file extension.
+This will not work for slides or R markdown notebooks.
+
+.. code:: sh
+
+    render example.Rmd -o example.pdf
+    render example.R -o example.pdf
+
+Create an R markdown file from source files with the ``catren`` shell command
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can pass ``--rmd_file`` (``-r``), ``--out_file`` (``-o``), and ``--format`` (``-f``) arguments to ``catren``.
+
+.. code:: sh
+
+    catren header.yml intro.md scrape.py plot.R notes.txt -r example.Rmd -f html_notebook
+
+If you only specify an output filename with the ``--out_file`` or ``-o`` flag,
+``catren`` will try to infer the R markdown file name and output format from the file extension.
+
+.. code:: sh
+
+    catren header.yml intro.md scrape.py plot.R notes.txt -o example.pdf
+
+If you only specify an output format with the ``--format`` or ``-f`` flag or do not provide any optional arguments,
+``catren`` will create a temporary file in a temporary location.
+
+.. code:: sh
+
+    catren header.yml intro.md scrape.py plot.R notes.txt -f word_document
+    catren header.yml intro.md scrape.py plot.R notes.txt
 
 Basic usage: Python environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,7 +144,12 @@ Basic usage: Python environment
 
     from pathlib import Path
 
-    from rmdawn import rmdawn, rmdusk
+    from rmdawn import rmdawn
+    from rmdawn import rmdusk
+    from rmdawn import rtormd
+    from rmdawn import rmdtor
+    from rmdawn import render
+    from rmdawn import catren
 
     # Create an R markdown file from source files
     Path("example.Rmd").write_text(
@@ -77,6 +159,32 @@ Basic usage: Python environment
     # Extract source files from an R markdown file
     rmdusk("example.Rmd")
 
+    # Convert R markdown files into R scripts
+    rmdtor("example.Rmd")
+
+    # Convert R scripts into R markdown files
+    rtormd("example.R")
+
+    # Generate output files from R scripts or R markdown files
+    render("example.Rmd") # The default format is HTML
+    render("example.R") # The default format is HTML
+    render("example.Rmd", out_format="pdf_document")
+    render("example.R", out_format="word_document")
+
+    # Create an R markdown file from source files output files and render it
+    file_list = ["header.yml", "intro.md", "scrape.py", "plot.R", "notes.txt"]
+    catren(file_list, rmd_file="example.Rmd") # The default format is HTML
+    catren(file_list, rmd_file="example.Rmd", out_format="pdf_document")
+    catren(file_list, out_file="example.html")
+
+    # Another alternative is to import the package and use it as a namespace.
+    import rmdawn
+
+    rmdawn.rmdawn(["header.yml", "intro.md", "scrape.py", "plot.R", "notes.txt"])
+    rmdawn.rmdusk("example.Rmd")
+    rmdawn.rtormd("example.R")
+    rmdawn.rmdtor("example.Rmd")
+    rmdawn.render("example.Rmd") # The default format is HTML
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/rmdawn.svg
    :target: https://pypi.python.org/pypi/rmdawn
