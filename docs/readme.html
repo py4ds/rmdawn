@@ -54,6 +54,9 @@
 <li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#creating-an-r-markdown-file-with-the-rmdawn-shell-command">Creating an R markdown file with the <code class="docutils literal notranslate"><span class="pre">rmdawn</span></code> shell command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#extract-yaml-markdown-and-code-files-from-r-markdown-files-with-the-rmdusk-shell-command">Extract YAML, markdown, and code files from R markdown files with the <code class="docutils literal notranslate"><span class="pre">rmdusk</span></code> shell command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convert-between-r-markdown-and-r-code-files-with-the-rmdtor-and-rtormd-shell-commands">Convert between R markdown and R code files with the <code class="docutils literal notranslate"><span class="pre">rmdtor</span></code> and <code class="docutils literal notranslate"><span class="pre">rtormd</span></code> shell commands</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#render-r-markdown-and-r-code-files-with-the-render-shell-command">Render R markdown and R code files with the <code class="docutils literal notranslate"><span class="pre">render</span></code> shell command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#create-an-r-markdown-file-from-source-files-with-the-catren-shell-command">Create an R markdown file from source files with the <code class="docutils literal notranslate"><span class="pre">catren</span></code> shell command</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#basic-usage-python-environment">Basic usage: Python environment</a></li>
 </ul>
 </li>
@@ -140,6 +143,14 @@ check out the <a class="reference external" href="https://marskar.github.io/nble
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rmdawn header.yml intro.md scrape.py plot.R notes.txt &gt; example.Rmd
 </pre></div>
 </div>
+<p>Instead of redirecting to a file (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>), you can use the <code class="docutils literal notranslate"><span class="pre">--out_file</span></code> or <code class="docutils literal notranslate"><span class="pre">-o</span></code> flag:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rmdawn header.yml intro.md scrape.py plot.R notes.txt -o example.Rmd
+</pre></div>
+</div>
+<p>The easiest way to handle large numbers of files is to use the <code class="docutils literal notranslate"><span class="pre">*</span></code> wildcard in the shell.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rmdawn source_file* -o example.Rmd
+</pre></div>
+</div>
 </div>
 <div class="section" id="extract-yaml-markdown-and-code-files-from-r-markdown-files-with-the-rmdusk-shell-command">
 <h3>Extract YAML, markdown, and code files from R markdown files with the <code class="docutils literal notranslate"><span class="pre">rmdusk</span></code> shell command<a class="headerlink" href="#extract-yaml-markdown-and-code-files-from-r-markdown-files-with-the-rmdusk-shell-command" title="Permalink to this headline">¶</a></h3>
@@ -147,11 +158,68 @@ check out the <a class="reference external" href="https://marskar.github.io/nble
 </pre></div>
 </div>
 </div>
+<div class="section" id="convert-between-r-markdown-and-r-code-files-with-the-rmdtor-and-rtormd-shell-commands">
+<h3>Convert between R markdown and R code files with the <code class="docutils literal notranslate"><span class="pre">rmdtor</span></code> and <code class="docutils literal notranslate"><span class="pre">rtormd</span></code> shell commands<a class="headerlink" href="#convert-between-r-markdown-and-r-code-files-with-the-rmdtor-and-rtormd-shell-commands" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rmdtor example.Rmd
+
+rtormd example.R
+</pre></div>
+</div>
+<p>You can also specify an new filename with <code class="docutils literal notranslate"><span class="pre">--out_file</span></code> or <code class="docutils literal notranslate"><span class="pre">-o</span></code> flag.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>rmdtor example.Rmd -o new.R
+
+rtormd example.R -o new.Rmd
+</pre></div>
+</div>
+</div>
+<div class="section" id="render-r-markdown-and-r-code-files-with-the-render-shell-command">
+<h3>Render R markdown and R code files with the <code class="docutils literal notranslate"><span class="pre">render</span></code> shell command<a class="headerlink" href="#render-r-markdown-and-r-code-files-with-the-render-shell-command" title="Permalink to this headline">¶</a></h3>
+<p>The default output format is HTML.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>render example.Rmd
+render example.R
+</pre></div>
+</div>
+<p>You can specify output format with the <code class="docutils literal notranslate"><span class="pre">--format</span></code> or <code class="docutils literal notranslate"><span class="pre">-f</span></code> flag.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>render example.Rmd -f word_document
+render example.R -f word_document
+</pre></div>
+</div>
+<p>If you only specify output filename with the <code class="docutils literal notranslate"><span class="pre">--out_file</span></code> or <code class="docutils literal notranslate"><span class="pre">-o</span></code> flag,
+<code class="docutils literal notranslate"><span class="pre">render</span></code> will try to infer the output format from the file extension.
+This will not work for slides or R markdown notebooks.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>render example.Rmd -o example.pdf
+render example.R -o example.pdf
+</pre></div>
+</div>
+</div>
+<div class="section" id="create-an-r-markdown-file-from-source-files-with-the-catren-shell-command">
+<h3>Create an R markdown file from source files with the <code class="docutils literal notranslate"><span class="pre">catren</span></code> shell command<a class="headerlink" href="#create-an-r-markdown-file-from-source-files-with-the-catren-shell-command" title="Permalink to this headline">¶</a></h3>
+<p>You can pass <code class="docutils literal notranslate"><span class="pre">--rmd_file</span></code> (<code class="docutils literal notranslate"><span class="pre">-r</span></code>), <code class="docutils literal notranslate"><span class="pre">--out_file</span></code> (<code class="docutils literal notranslate"><span class="pre">-o</span></code>), and <code class="docutils literal notranslate"><span class="pre">--format</span></code> (<code class="docutils literal notranslate"><span class="pre">-f</span></code>) arguments to <code class="docutils literal notranslate"><span class="pre">catren</span></code>.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>catren header.yml intro.md scrape.py plot.R notes.txt -r example.Rmd -f html_notebook
+</pre></div>
+</div>
+<p>If you only specify an output filename with the <code class="docutils literal notranslate"><span class="pre">--out_file</span></code> or <code class="docutils literal notranslate"><span class="pre">-o</span></code> flag,
+<code class="docutils literal notranslate"><span class="pre">catren</span></code> will try to infer the R markdown file name and output format from the file extension.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>catren header.yml intro.md scrape.py plot.R notes.txt -o example.pdf
+</pre></div>
+</div>
+<p>If you only specify an output format with the <code class="docutils literal notranslate"><span class="pre">--format</span></code> or <code class="docutils literal notranslate"><span class="pre">-f</span></code> flag or do not provide any optional arguments,
+<code class="docutils literal notranslate"><span class="pre">catren</span></code> will create a temporary file in a temporary location.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>catren header.yml intro.md scrape.py plot.R notes.txt -f word_document
+catren header.yml intro.md scrape.py plot.R notes.txt
+</pre></div>
+</div>
+</div>
 <div class="section" id="basic-usage-python-environment">
 <h3>Basic usage: Python environment<a class="headerlink" href="#basic-usage-python-environment" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
 
-<span class="kn">from</span> <span class="nn">rmdawn</span> <span class="kn">import</span> <span class="n">rmdawn</span><span class="p">,</span> <span class="n">rmdusk</span>
+<span class="kn">from</span> <span class="nn">rmdawn</span> <span class="kn">import</span> <span class="n">rmdawn</span>
+<span class="kn">from</span> <span class="nn">rmdawn</span> <span class="kn">import</span> <span class="n">rmdusk</span>
+<span class="kn">from</span> <span class="nn">rmdawn</span> <span class="kn">import</span> <span class="n">rtormd</span>
+<span class="kn">from</span> <span class="nn">rmdawn</span> <span class="kn">import</span> <span class="n">rmdtor</span>
+<span class="kn">from</span> <span class="nn">rmdawn</span> <span class="kn">import</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">rmdawn</span> <span class="kn">import</span> <span class="n">catren</span>
 
 <span class="c1"># Create an R markdown file from source files</span>
 <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span>
@@ -160,6 +228,33 @@ check out the <a class="reference external" href="https://marskar.github.io/nble
 
 <span class="c1"># Extract source files from an R markdown file</span>
 <span class="n">rmdusk</span><span class="p">(</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert R markdown files into R scripts</span>
+<span class="n">rmdtor</span><span class="p">(</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">)</span>
+
+<span class="c1"># Convert R scripts into R markdown files</span>
+<span class="n">rtormd</span><span class="p">(</span><span class="s2">&quot;example.R&quot;</span><span class="p">)</span>
+
+<span class="c1"># Generate output files from R scripts or R markdown files</span>
+<span class="n">render</span><span class="p">(</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">)</span> <span class="c1"># The default format is HTML</span>
+<span class="n">render</span><span class="p">(</span><span class="s2">&quot;example.R&quot;</span><span class="p">)</span> <span class="c1"># The default format is HTML</span>
+<span class="n">render</span><span class="p">(</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">,</span> <span class="n">out_format</span><span class="o">=</span><span class="s2">&quot;pdf_document&quot;</span><span class="p">)</span>
+<span class="n">render</span><span class="p">(</span><span class="s2">&quot;example.R&quot;</span><span class="p">,</span> <span class="n">out_format</span><span class="o">=</span><span class="s2">&quot;word_document&quot;</span><span class="p">)</span>
+
+<span class="c1"># Create an R markdown file from source files output files and render it</span>
+<span class="n">file_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;header.yml&quot;</span><span class="p">,</span> <span class="s2">&quot;intro.md&quot;</span><span class="p">,</span> <span class="s2">&quot;scrape.py&quot;</span><span class="p">,</span> <span class="s2">&quot;plot.R&quot;</span><span class="p">,</span> <span class="s2">&quot;notes.txt&quot;</span><span class="p">]</span>
+<span class="n">catren</span><span class="p">(</span><span class="n">file_list</span><span class="p">,</span> <span class="n">rmd_file</span><span class="o">=</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">)</span> <span class="c1"># The default format is HTML</span>
+<span class="n">catren</span><span class="p">(</span><span class="n">file_list</span><span class="p">,</span> <span class="n">rmd_file</span><span class="o">=</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">,</span> <span class="n">out_format</span><span class="o">=</span><span class="s2">&quot;pdf_document&quot;</span><span class="p">)</span>
+<span class="n">catren</span><span class="p">(</span><span class="n">file_list</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="s2">&quot;example.html&quot;</span><span class="p">)</span>
+
+<span class="c1"># Another alternative is to import the package and use it as a namespace.</span>
+<span class="kn">import</span> <span class="nn">rmdawn</span>
+
+<span class="n">rmdawn</span><span class="o">.</span><span class="n">rmdawn</span><span class="p">([</span><span class="s2">&quot;header.yml&quot;</span><span class="p">,</span> <span class="s2">&quot;intro.md&quot;</span><span class="p">,</span> <span class="s2">&quot;scrape.py&quot;</span><span class="p">,</span> <span class="s2">&quot;plot.R&quot;</span><span class="p">,</span> <span class="s2">&quot;notes.txt&quot;</span><span class="p">])</span>
+<span class="n">rmdawn</span><span class="o">.</span><span class="n">rmdusk</span><span class="p">(</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">)</span>
+<span class="n">rmdawn</span><span class="o">.</span><span class="n">rtormd</span><span class="p">(</span><span class="s2">&quot;example.R&quot;</span><span class="p">)</span>
+<span class="n">rmdawn</span><span class="o">.</span><span class="n">rmdtor</span><span class="p">(</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">)</span>
+<span class="n">rmdawn</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">)</span> <span class="c1"># The default format is HTML</span>
 </pre></div>
 </div>
 </div>
