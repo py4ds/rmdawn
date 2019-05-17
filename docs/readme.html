@@ -195,7 +195,8 @@ render example.R -o example.pdf
 <div class="section" id="create-an-r-markdown-file-from-source-files-with-the-catren-shell-command">
 <h3>Create an R markdown file from source files with the <code class="docutils literal notranslate"><span class="pre">catren</span></code> shell command<a class="headerlink" href="#create-an-r-markdown-file-from-source-files-with-the-catren-shell-command" title="Permalink to this headline">¶</a></h3>
 <p>You can pass <code class="docutils literal notranslate"><span class="pre">--rmd_file</span></code> (<code class="docutils literal notranslate"><span class="pre">-r</span></code>), <code class="docutils literal notranslate"><span class="pre">--out_file</span></code> (<code class="docutils literal notranslate"><span class="pre">-o</span></code>), and <code class="docutils literal notranslate"><span class="pre">--format</span></code> (<code class="docutils literal notranslate"><span class="pre">-f</span></code>) arguments to <code class="docutils literal notranslate"><span class="pre">catren</span></code>.</p>
-<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>catren header.yml intro.md scrape.py plot.R notes.txt -r example.Rmd -f html_notebook
+<p>The default output format is HTML.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>catren header.yml intro.md scrape.py plot.R notes.txt -r example.Rmd
 </pre></div>
 </div>
 <p>If you only specify an output filename with the <code class="docutils literal notranslate"><span class="pre">--out_file</span></code> or <code class="docutils literal notranslate"><span class="pre">-o</span></code> flag,
@@ -222,9 +223,8 @@ catren header.yml intro.md scrape.py plot.R notes.txt
 <span class="kn">from</span> <span class="nn">rmdawn</span> <span class="kn">import</span> <span class="n">catren</span>
 
 <span class="c1"># Create an R markdown file from source files</span>
-<span class="n">Path</span><span class="p">(</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span>
-    <span class="n">rmdawn</span><span class="p">([</span><span class="s2">&quot;header.yml&quot;</span><span class="p">,</span> <span class="s2">&quot;intro.md&quot;</span><span class="p">,</span> <span class="s2">&quot;scrape.py&quot;</span><span class="p">,</span> <span class="s2">&quot;plot.R&quot;</span><span class="p">,</span> <span class="s2">&quot;notes.txt&quot;</span><span class="p">])</span>
-    <span class="p">)</span>
+<span class="n">file_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;header.yml&quot;</span><span class="p">,</span> <span class="s2">&quot;intro.md&quot;</span><span class="p">,</span> <span class="s2">&quot;scrape.py&quot;</span><span class="p">,</span> <span class="s2">&quot;plot.R&quot;</span><span class="p">,</span> <span class="s2">&quot;notes.txt&quot;</span><span class="p">]</span>
+<span class="n">Path</span><span class="p">(</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">rmdawn</span><span class="p">(</span><span class="n">file_list</span><span class="p">))</span>
 
 <span class="c1"># Extract source files from an R markdown file</span>
 <span class="n">rmdusk</span><span class="p">(</span><span class="s2">&quot;example.Rmd&quot;</span><span class="p">)</span>

@@ -118,9 +118,11 @@ Create an R markdown file from source files with the ``catren`` shell command
 
 You can pass ``--rmd_file`` (``-r``), ``--out_file`` (``-o``), and ``--format`` (``-f``) arguments to ``catren``.
 
+The default output format is HTML.
+
 .. code:: sh
 
-    catren header.yml intro.md scrape.py plot.R notes.txt -r example.Rmd -f html_notebook
+    catren header.yml intro.md scrape.py plot.R notes.txt -r example.Rmd
 
 If you only specify an output filename with the ``--out_file`` or ``-o`` flag,
 ``catren`` will try to infer the R markdown file name and output format from the file extension.
@@ -152,9 +154,8 @@ Basic usage: Python environment
     from rmdawn import catren
 
     # Create an R markdown file from source files
-    Path("example.Rmd").write_text(
-        rmdawn(["header.yml", "intro.md", "scrape.py", "plot.R", "notes.txt"])
-        )
+    file_list = ["header.yml", "intro.md", "scrape.py", "plot.R", "notes.txt"]
+    Path("example.Rmd").write_text(rmdawn(file_list))
 
     # Extract source files from an R markdown file
     rmdusk("example.Rmd")
