@@ -187,6 +187,12 @@ Basic usage: Python environment
     rmdawn.rmdtor("example.Rmd")
     rmdawn.render("example.Rmd") # The default format is HTML
 
+Next Steps
+----------
+
+Currently, `xaringan <https://bookdown.org/yihui/rmarkdown/xaringan.html>`__ slides require a special format.
+- Write ``remark``/``demark`` functions and commands to add/remove slide delimiters ``---`` before headers ``#``.
+
 .. |PyPI| image:: https://img.shields.io/pypi/v/rmdawn.svg
    :target: https://pypi.python.org/pypi/rmdawn
 .. |Updates| image:: https://pyup.io/repos/github/marskar/rmdawn/shield.svg
