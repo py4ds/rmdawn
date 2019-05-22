@@ -191,6 +191,7 @@ Next Steps
 ----------
 
 Currently, `xaringan <https://bookdown.org/yihui/rmarkdown/xaringan.html>`__ slides require a special format.
+
 - Write ``remark``/``demark`` functions and commands to add/remove slide delimiters ``---`` before headers ``#``.
 
 .. |PyPI| image:: https://img.shields.io/pypi/v/rmdawn.svg
