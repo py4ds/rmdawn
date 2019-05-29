@@ -9,7 +9,7 @@ from rmdawn.rmdtor import rmdtor
 @click.command()
 @click.argument("in_file")
 @click.option("-o", "--out_file")
-def rmdtor_cli(in_file: str, out_file: Optional[str] = None) -> None:
+def rmdtor_cli(in_file: str, out_file: Optional[str] = None):
     """Convert an R markdown file into an R script.
 
     :param in_file: The name of the input R markdown file.
