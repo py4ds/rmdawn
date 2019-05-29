@@ -8,9 +8,6 @@ import setuptools
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
-with open('HISTORY.rst') as history_file:
-    history = history_file.read()
-
 requirements = ['Click>=6.0', "rpy2"]
 
 setup_requirements = ['pytest-runner', ]
@@ -41,7 +38,7 @@ setuptools.setup(
     },
     install_requires=requirements,
     license="MIT license",
-    long_description=readme + '\n\n' + history,
+    long_description=readme,
     long_description_content_type='text/x-rst',
     include_package_data=True,
     keywords='rmdawn',

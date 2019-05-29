@@ -195,7 +195,7 @@ Currently, `xaringan <https://bookdown.org/yihui/rmarkdown/xaringan.html>`__ sli
 - Write ``remark``/``demark`` functions and commands to add/remove slide delimiters ``---`` before headers ``#``.
 
 .. |Build| image:: https://travis-ci.org/marskar/rmdawn.svg?branch=master
-    :target: https://travis-ci.org/marskar/rmdawn
+   :target: https://travis-ci.org/marskar/rmdawn
 .. |License| image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
    :target: https://opensource.org/licenses/MIT
 .. |PyPI| image:: https://img.shields.io/pypi/v/rmdawn.svg
