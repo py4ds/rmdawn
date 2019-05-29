@@ -155,7 +155,7 @@ htmlhelp_basename: str = 'rmdawndoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
-latex_documents: List[str] = [
+latex_documents = [
     (master_doc, 'rmdawn.tex', 'Rmdawn Documentation',
      'Martin Skarzynski', 'manual'),
 ]
@@ -165,7 +165,7 @@ latex_documents: List[str] = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages: List[str] = [
+man_pages = [
     (master_doc, 'rmdawn', 'Rmdawn Documentation',
      ['Martin Skarzynski'], 1)
 ]
@@ -176,7 +176,7 @@ man_pages: List[str] = [
 # Grouping the document tree into Texinfo files. List of tuples
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
-texinfo_documents: List[str] = [
+texinfo_documents = [
     (master_doc, 'rmdawn', 'Rmdawn Documentation', 'Martin Skarzynski',
      'Rmdawn', 'Create, run, and convert Jupyter notebooks programmatically.',
      'Miscellaneous'),
@@ -186,7 +186,7 @@ texinfo_documents: List[str] = [
 # -- Options for Epub output -------------------------------------------------
 
 # Bibliographic Dublin Core info.
-epub_title: List[str] = project
+epub_title: str = project
 
 # The unique identifier of the text. This can be a ISBN number
 # or the project homepage.

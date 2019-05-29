@@ -1,7 +1,7 @@
 Rmdawn: a Python package for programmatic R markdown workflows
 ==============================================================
 
-|Status| |PyPI| |Updates|
+|Build| |License| |PyPI| |Status| |Updates| |Versions|
 
 Introduction
 ------------
@@ -194,10 +194,17 @@ Currently, `xaringan <https://bookdown.org/yihui/rmarkdown/xaringan.html>`__ sli
 
 - Write ``remark``/``demark`` functions and commands to add/remove slide delimiters ``---`` before headers ``#``.
 
+.. |Build| image:: https://travis-ci.org/marskar/rmdawn.svg?branch=master
+    :target: https://travis-ci.org/marskar/rmdawn
+.. |License| image:: https://img.shields.io/badge/License-MIT-brightgreen.svg
+   :target: https://opensource.org/licenses/MIT
+.. |PyPI| image:: https://img.shields.io/pypi/v/rmdawn.svg
+   :target: https://pypi.python.org/pypi/rmdawn
 .. |Status| image:: https://www.repostatus.org/badges/latest/active.svg
    :alt: Project Status: Active – The project has reached a stable, usable state and is being actively developed.
    :target: https://www.repostatus.org/#active
-.. |PyPI| image:: https://img.shields.io/pypi/v/rmdawn.svg
-   :target: https://pypi.python.org/pypi/rmdawn
 .. |Updates| image:: https://pyup.io/repos/github/marskar/rmdawn/shield.svg
    :target: https://pyup.io/repos/github/marskar/rmdawn/
+.. |Versions| image:: https://img.shields.io/pypi/pyversions/rmdawn.svg
+   :alt: PyPI - Python Version
+   :target: https://www.python.org/downloads/

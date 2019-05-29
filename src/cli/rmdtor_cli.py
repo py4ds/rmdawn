@@ -15,4 +15,4 @@ def rmdtor_cli(in_file: str, out_file: Optional[str] = None) -> None:
     :param in_file: The name of the input R markdown file.
     :param out_file: The name of the output R script.
     """
-    rmdtor(in_file, out_file=out) if out else rmdtor(in_file)
+    rmdtor(in_file, out_file=out_file) if out_file else rmdtor(in_file)
