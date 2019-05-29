@@ -5,7 +5,7 @@ from typing import Optional
 from rpy2.robjects.packages import importr
 
 
-def rmdtor(in_file: str, out_file: Optional[str] = None) -> None:
+def rmdtor(in_file: str, out_file: Optional[str] = None):
     """Convert an R markdown file into an R script.
 
     :param in_file: The name of the input R markdown file.
