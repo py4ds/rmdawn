@@ -1,7 +1,7 @@
 Rmdawn: a Python package for programmatic R markdown workflows
 ==============================================================
 
-|PyPI| |Updates|
+|Status| |PyPI| |Updates|
 
 Introduction
 ------------
@@ -194,6 +194,9 @@ Currently, `xaringan <https://bookdown.org/yihui/rmarkdown/xaringan.html>`__ sli
 
 - Write ``remark``/``demark`` functions and commands to add/remove slide delimiters ``---`` before headers ``#``.
 
+.. |Status| image:: https://www.repostatus.org/badges/latest/active.svg
+   :alt: Project Status: Active – The project has reached a stable, usable state and is being actively developed.
+   :target: https://www.repostatus.org/#active
 .. |PyPI| image:: https://img.shields.io/pypi/v/rmdawn.svg
    :target: https://pypi.python.org/pypi/rmdawn
 .. |Updates| image:: https://pyup.io/repos/github/marskar/rmdawn/shield.svg
