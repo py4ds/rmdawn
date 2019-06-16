@@ -1,6 +1,10 @@
 Rmdawn: a Python package for programmatic R markdown workflows
 ==============================================================
 
+.. image:: https://badges.gitter.im/py4ds/rmdawn.svg
+   :alt: Join the chat at https://gitter.im/py4ds/rmdawn
+   :target: https://gitter.im/py4ds/rmdawn?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
 |Build| |License| |PyPI| |Status| |Updates| |Versions|
 
 Introduction
