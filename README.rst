@@ -25,14 +25,14 @@ The command line interface relies on the `click <https://click.palletsprojects.c
 
 For a related package that provides programmatic tools for working with `Jupyter
 Notebooks <http://jupyter-notebook.readthedocs.io/en/latest/examples/Notebook/What%20is%20the%20Jupyter%20Notebook.html>`__,
-check out the `Nbless Python package <https://marskar.github.io/nbless/>`__.
+check out the `Nbless Python package <https://py4ds.github.io/nbless/>`__.
 
 Documentation and Code
 ----------------------
 
-The documentation is hosted at https://marskar.github.io/rmdawn/.
+The documentation is hosted at https://py4ds.github.io/rmdawn/.
 
-The code is hosted at https://github.com/marskar/rmdawn.
+The code is hosted at https://github.com/py4ds/rmdawn.
 
 Installation
 ------------
@@ -41,7 +41,7 @@ Installation
 
     pip install rmdawn
 
-or clone the `repo <https://github.com/marskar/rmdawn>`__, e.g. ``git clone https://github.com/marskar/rmdawn`` and install locally using setup.py (``python setup.py install``) or ``pip`` (``pip install .``).
+or clone the `repo <https://github.com/py4ds/rmdawn>`__, e.g. ``git clone https://github.com/py4ds/rmdawn`` and install locally using setup.py (``python setup.py install``) or ``pip`` (``pip install .``).
 
 
 Creating an R markdown file with the ``rmdawn`` shell command
@@ -197,8 +197,8 @@ Currently, `xaringan <https://bookdown.org/yihui/rmarkdown/xaringan.html>`__ sli
 .. |Chat| image:: https://badges.gitter.im/py4ds/rmdawn.svg
    :alt: Join the chat at https://gitter.im/py4ds/rmdawn
    :target: https://gitter.im/py4ds/rmdawn
-.. |Build| image:: https://travis-ci.org/marskar/rmdawn.svg?branch=master
-   :target: https://travis-ci.org/marskar/rmdawn
+.. |Build| image:: https://travis-ci.org/py4ds/rmdawn.svg?branch=master
+   :target: https://travis-ci.org/py4ds/rmdawn
 .. |License| image:: https://img.shields.io/badge/License-MIT-violet.svg
    :target: https://opensource.org/licenses/MIT
 .. |PyPI| image:: https://img.shields.io/pypi/v/rmdawn.svg
@@ -206,8 +206,8 @@ Currently, `xaringan <https://bookdown.org/yihui/rmarkdown/xaringan.html>`__ sli
 .. |Status| image:: https://www.repostatus.org/badges/latest/active.svg
    :alt: Project Status: Active – The project has reached a stable, usable state and is being actively developed.
    :target: https://www.repostatus.org/#active
-.. |Updates| image:: https://pyup.io/repos/github/marskar/rmdawn/shield.svg
-   :target: https://pyup.io/repos/github/marskar/rmdawn/
+.. |Updates| image:: https://pyup.io/repos/github/py4ds/rmdawn/shield.svg
+   :target: https://pyup.io/repos/github/py4ds/rmdawn/
 .. |Versions| image:: https://img.shields.io/pypi/pyversions/rmdawn.svg
    :alt: PyPI - Python Version
    :target: https://www.python.org/downloads/
