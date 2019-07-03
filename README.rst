@@ -199,7 +199,7 @@ Currently, `xaringan <https://bookdown.org/yihui/rmarkdown/xaringan.html>`__ sli
    :target: https://gitter.im/py4ds/rmdawn
 .. |Build| image:: https://travis-ci.org/py4ds/rmdawn.svg?branch=master
    :target: https://travis-ci.org/py4ds/rmdawn
-.. |License| image:: https://img.shields.io/badge/License-MIT-violet.svg
+.. |License| image:: https://img.shields.io/badge/License-MIT-purple.svg
    :target: https://opensource.org/licenses/MIT
 .. |PyPI| image:: https://img.shields.io/pypi/v/rmdawn.svg
    :target: https://pypi.python.org/pypi/rmdawn
