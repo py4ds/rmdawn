@@ -81,7 +81,7 @@ major: git
 
 
 ## remove all build, test, coverage and Python artifacts
-clean: clean-docs clean-build clean-pyc clean-test
+clean: clean-build clean-pyc clean-test
 
 clean-docs:
 	rm -rf docs/_modules
