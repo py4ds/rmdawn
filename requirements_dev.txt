@@ -13,5 +13,5 @@ pytest==4.6.3
 pytest-runner==5.1
 recommonmark==0.5.0
 sphinx-click==2.2.0
-sphinx-rtd-theme == 0.4.3
+sphinx-rtd-theme==1.2.0
 sphinxcontrib-fulltoc == 1.2.0
